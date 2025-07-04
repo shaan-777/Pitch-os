@@ -937,7 +937,7 @@ import { Check } from "lucide-react";
 'use client';
 
 import React from 'react';
-import { CheckCircle2 } from 'lucide-react';
+import { CheckCircle2, Circle } from 'lucide-react';
 
 const pricingPlans = [
   {
@@ -1020,13 +1020,13 @@ export const Pricing = () => {
                   <li
                     key={i}
                     className={`flex items-center gap-2 ${
-                      feature.available ? 'text-white' : 'text-zinc-500'
+                      feature.available ? 'text-white' : 'text-zinc-500 line-through'
                     }`}
                   >
                     {feature.available ? (
                       <CheckCircle2 className="w-4 h-4 text-purple-400" />
                     ) : (
-                      <span className="w-4 h-4 inline-block" />
+                      <Circle className="w-4 h-4 text-zinc-600" />
                     )}
                     <span>{feature.label}</span>
                   </li>
@@ -1038,5 +1038,4 @@ export const Pricing = () => {
       </div>
     </section>
   );
-};
-
+};  isme jo feature available na ho unko strike out mat karo and bas unko aise chodhdo bas name ke aage tick na ho unme
