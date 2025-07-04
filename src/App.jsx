@@ -1,4 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
 import { useEffect } from 'react';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
