@@ -1,4 +1,4 @@
-
+import { Check } from "lucide-react";
 const plans = [
   {
     name: "Basic",
