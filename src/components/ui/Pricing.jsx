@@ -797,140 +797,246 @@ import { Check } from "lucide-react";
 
 
 
-const plans = [
+// const plans = [
+//   {
+//     name: "Basic",
+//     price: "$0",
+//     frequency: "/month",
+//     description: "Great for trying out StartAI and for tiny teams.",
+//     features: ["Console", "PitchMaster Deck"],
+//     buttonText: "Start for Free",
+//     highlight: false,
+//     lightBg: "from-[#FFEFE5] to-[#FFE0C7]",
+//   },
+//   {
+//     name: "Pro Plan",
+//     price: "$15",
+//     frequency: "/month",
+//     description: "Best for small teams scaling fast.",
+//     features: [
+//       "Console",
+//       "PitchMaster Deck",
+//       "Enhanced PitchMasterAI feedback",
+//       "Evaluate",
+//     ],
+//     buttonText: "Sign up with Pro Plan",
+//     highlight: true,
+//     lightBg: "from-[#EDE7FE] to-[#D9CEFF]",
+//   },
+//   {
+//     name: "Enterprise",
+//     price: "$25",
+//     frequency: "/month",
+//     description: "Great for growing startups and enterprises.",
+//     features: [
+//       "Console",
+//       "PitchMaster Deck",
+//       "Enhanced PitchMasterAI feedback",
+//       "Evaluate",
+//       "Mentorship & Guidance",
+//       "Founders Copilot",
+//     ],
+//     buttonText: "Sign up with Enterprise",
+//     highlight: false,
+//     lightBg: "from-[#E4F1FA] to-[#C8E6F9]",
+//   },
+// ];
+
+// const allFeatures = [
+//   "Console",
+//   "PitchMaster Deck",
+//   "Enhanced PitchMasterAI feedback",
+//   "Evaluate",
+//   "Mentorship & Guidance",
+//   "Founders Copilot",
+// ];
+
+// export function Pricing() {
+//   return (
+//     <section className="relative w-full py-16 bg-white dark:bg-[#0C0C0D] text-black dark:text-white overflow-hidden">
+//       {/* Dark background effects */}
+//       <div className="absolute inset-0 z-0 hidden dark:block">
+//         <div className="absolute top-1/2 left-1/2 w-[1200px] h-[1200px] -translate-x-1/2 -translate-y-1/2 bg-orange-500/10 rounded-full blur-[160px] opacity-30" />
+//         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] via-transparent to-[#0C0C0D]" />
+//       </div>
+
+//       {/* Header */}
+//       <div className="relative z-10 text-center mb-12 px-4">
+//         <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4">
+//           Simple and Affordable Pricing Plans
+//         </h2>
+//         <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-zinc-400 max-w-2xl mx-auto">
+//           Start tracking and improving your finance management
+//         </p>
+//       </div>
+
+//       {/* Grid that always shows 3 columns */}
+//       <div className="relative z-10 px-2 sm:px-6">
+//         <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-full overflow-hidden">
+//           {plans.map((plan, index) => (
+//             <div
+//               key={index}
+//               className={`rounded-xl p-3 sm:p-4 md:p-6 backdrop-blur-lg border overflow-hidden shadow-md hover:shadow-xl transition duration-300
+//                 bg-gradient-to-b ${plan.lightBg} dark:bg-black/30 dark:bg-none dark:backdrop-blur-lg
+//                 border-zinc-200 dark:border-white/10 text-xs sm:text-sm
+//               `}
+//             >
+//               <h3 className="text-base sm:text-lg font-semibold mb-1 text-black dark:text-[#d0bfff]">
+//                 {plan.name}
+//               </h3>
+//               <p className="text-xl font-bold mb-1 text-black dark:text-[#d0bfff]">
+//                 {plan.price}
+//                 <span className="text-xs font-medium text-gray-600 dark:text-zinc-400">
+//                   {plan.frequency}
+//                 </span>
+//               </p>
+//               <p className="text-xs text-gray-600 dark:text-zinc-400 mb-4">
+//                 {plan.description}
+//               </p>
+
+//               <button
+//                 className="w-full py-1.5 rounded-full text-xs font-medium border bg-white text-black dark:bg-zinc-800 dark:text-white hover:bg-black hover:text-white dark:hover:bg-zinc-700 dark:border-white border-black"
+//               >
+//                 {plan.buttonText}
+//               </button>
+
+//               {/* Features */}
+//               <div className="mt-4 border-t border-gray-300 dark:border-zinc-700 pt-3">
+//                 <p className="text-[10px] uppercase tracking-widest text-gray-500 dark:text-zinc-500 mb-2">
+//                   Features
+//                 </p>
+//                 <ul className="space-y-2">
+//                   {allFeatures.map((feature, idx) => (
+//                     <li
+//                       key={idx}
+//                       className={`flex items-center gap-2 text-xs ${
+//                         plan.features.includes(feature)
+//                           ? "text-black dark:text-[#d0bfff]"
+//                           : "text-gray-400 dark:text-zinc-500"
+//                       }`}
+//                     >
+//                       {plan.features.includes(feature) ? (
+//                         <span className="w-4 h-4 rounded-full bg-black dark:bg-[#d0bfff] flex items-center justify-center">
+//                           <Check className="w-2 h-2 text-white dark:text-black" />
+//                         </span>
+//                       ) : (
+//                         <span className="w-4 h-4 rounded-full border border-gray-300 dark:border-zinc-600" />
+//                       )}
+//                       {feature}
+//                     </li>
+//                   ))}
+//                 </ul>
+//               </div>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
+'use client';
+
+import React from 'react';
+import { CheckCircle2 } from 'lucide-react';
+
+const pricingPlans = [
   {
-    name: "Basic",
-    price: "$0",
-    frequency: "/month",
-    description: "Great for trying out StartAI and for tiny teams.",
-    features: ["Console", "PitchMaster Deck"],
-    buttonText: "Start for Free",
-    highlight: false,
-    lightBg: "from-[#FFEFE5] to-[#FFE0C7]",
+    title: 'Basic',
+    price: '$0',
+    period: '/month',
+    description: 'Great for trying out StartAI and for tiny teams.',
+    buttonText: 'Start for Free',
+    features: [
+      { label: 'Console', available: true },
+      { label: 'PitchMaster Deck', available: true },
+      { label: 'Enhanced PitchMasterAI feedback', available: false },
+      { label: 'Evaluate', available: false },
+      { label: 'Mentorship & Guidance', available: false },
+      { label: 'Founders Copilot', available: false },
+    ],
   },
   {
-    name: "Pro Plan",
-    price: "$15",
-    frequency: "/month",
-    description: "Best for small teams scaling fast.",
+    title: 'Pro Plan',
+    price: '$15',
+    period: '/month',
+    description: 'Best for small teams scaling fast.',
+    buttonText: 'Sign up with Pro Plan',
     features: [
-      "Console",
-      "PitchMaster Deck",
-      "Enhanced PitchMasterAI feedback",
-      "Evaluate",
+      { label: 'Console', available: true },
+      { label: 'PitchMaster Deck', available: true },
+      { label: 'Enhanced PitchMasterAI feedback', available: true },
+      { label: 'Evaluate', available: true },
+      { label: 'Mentorship & Guidance', available: false },
+      { label: 'Founders Copilot', available: false },
     ],
-    buttonText: "Sign up with Pro Plan",
-    highlight: true,
-    lightBg: "from-[#EDE7FE] to-[#D9CEFF]",
   },
   {
-    name: "Enterprise",
-    price: "$25",
-    frequency: "/month",
-    description: "Great for growing startups and enterprises.",
+    title: 'Enterprise',
+    price: '$25',
+    period: '/month',
+    description: 'Great for growing startups and enterprises.',
+    buttonText: 'Sign up with Enterprise',
     features: [
-      "Console",
-      "PitchMaster Deck",
-      "Enhanced PitchMasterAI feedback",
-      "Evaluate",
-      "Mentorship & Guidance",
-      "Founders Copilot",
+      { label: 'Console', available: true },
+      { label: 'PitchMaster Deck', available: true },
+      { label: 'Enhanced PitchMasterAI feedback', available: true },
+      { label: 'Evaluate', available: true },
+      { label: 'Mentorship & Guidance', available: true },
+      { label: 'Founders Copilot', available: true },
     ],
-    buttonText: "Sign up with Enterprise",
-    highlight: false,
-    lightBg: "from-[#E4F1FA] to-[#C8E6F9]",
   },
 ];
 
-const allFeatures = [
-  "Console",
-  "PitchMaster Deck",
-  "Enhanced PitchMasterAI feedback",
-  "Evaluate",
-  "Mentorship & Guidance",
-  "Founders Copilot",
-];
-
-export function Pricing() {
+export const Pricing = () => {
   return (
-    <section className="relative w-full py-16 bg-white dark:bg-[#0C0C0D] text-black dark:text-white overflow-hidden">
-      {/* Dark background effects */}
-      <div className="absolute inset-0 z-0 hidden dark:block">
-        <div className="absolute top-1/2 left-1/2 w-[1200px] h-[1200px] -translate-x-1/2 -translate-y-1/2 bg-orange-500/10 rounded-full blur-[160px] opacity-30" />
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#1a1a1a] via-transparent to-[#0C0C0D]" />
-      </div>
-
-      {/* Header */}
-      <div className="relative z-10 text-center mb-12 px-4">
-        <h2 className="text-2xl sm:text-3xl md:text-5xl font-extrabold mb-4">
-          Simple and Affordable Pricing Plans
-        </h2>
-        <p className="text-sm sm:text-base md:text-lg text-muted-foreground dark:text-zinc-400 max-w-2xl mx-auto">
+    <section className="w-full py-16 px-4 dark:bg-black bg-white">
+      <div className="max-w-7xl mx-auto text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-purple-400 mb-3">
           Start tracking and improving your finance management
-        </p>
+        </h2>
       </div>
 
-      {/* Grid that always shows 3 columns */}
-      <div className="relative z-10 px-2 sm:px-6">
-        <div className="grid grid-cols-3 gap-3 sm:gap-6 max-w-full overflow-hidden">
-          {plans.map((plan, index) => (
-            <div
-              key={index}
-              className={`rounded-xl p-3 sm:p-4 md:p-6 backdrop-blur-lg border overflow-hidden shadow-md hover:shadow-xl transition duration-300
-                bg-gradient-to-b ${plan.lightBg} dark:bg-black/30 dark:bg-none dark:backdrop-blur-lg
-                border-zinc-200 dark:border-white/10 text-xs sm:text-sm
-              `}
-            >
-              <h3 className="text-base sm:text-lg font-semibold mb-1 text-black dark:text-[#d0bfff]">
-                {plan.name}
-              </h3>
-              <p className="text-xl font-bold mb-1 text-black dark:text-[#d0bfff]">
-                {plan.price}
-                <span className="text-xs font-medium text-gray-600 dark:text-zinc-400">
-                  {plan.frequency}
-                </span>
-              </p>
-              <p className="text-xs text-gray-600 dark:text-zinc-400 mb-4">
-                {plan.description}
-              </p>
+      <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto">
+        {pricingPlans.map((plan, index) => (
+          <div
+            key={index}
+            className="rounded-2xl border border-zinc-700 bg-black text-white px-6 py-8 flex flex-col justify-between shadow-xl"
+          >
+            <div>
+              <h3 className="text-2xl font-semibold text-purple-300 mb-1">{plan.title}</h3>
+              <div className="flex items-baseline gap-1 mb-1">
+                <span className="text-3xl font-bold">{plan.price}</span>
+                <span className="text-base text-zinc-400">{plan.period}</span>
+              </div>
+              <p className="text-zinc-400 text-sm mb-6">{plan.description}</p>
 
-              <button
-                className="w-full py-1.5 rounded-full text-xs font-medium border bg-white text-black dark:bg-zinc-800 dark:text-white hover:bg-black hover:text-white dark:hover:bg-zinc-700 dark:border-white border-black"
-              >
+              <button className="w-full mb-6 border border-zinc-400 rounded-full py-2 px-4 text-white hover:bg-zinc-800 transition">
                 {plan.buttonText}
               </button>
 
-              {/* Features */}
-              <div className="mt-4 border-t border-gray-300 dark:border-zinc-700 pt-3">
-                <p className="text-[10px] uppercase tracking-widest text-gray-500 dark:text-zinc-500 mb-2">
-                  Features
-                </p>
-                <ul className="space-y-2">
-                  {allFeatures.map((feature, idx) => (
-                    <li
-                      key={idx}
-                      className={`flex items-center gap-2 text-xs ${
-                        plan.features.includes(feature)
-                          ? "text-black dark:text-[#d0bfff]"
-                          : "text-gray-400 dark:text-zinc-500"
-                      }`}
-                    >
-                      {plan.features.includes(feature) ? (
-                        <span className="w-4 h-4 rounded-full bg-black dark:bg-[#d0bfff] flex items-center justify-center">
-                          <Check className="w-2 h-2 text-white dark:text-black" />
-                        </span>
-                      ) : (
-                        <span className="w-4 h-4 rounded-full border border-gray-300 dark:border-zinc-600" />
-                      )}
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
-              </div>
+              <p className="uppercase text-xs text-zinc-500 tracking-widest mb-4">Features</p>
+              <ul className="space-y-3">
+                {plan.features.map((feature, i) => (
+                  <li
+                    key={i}
+                    className={`flex items-center gap-2 ${
+                      feature.available ? 'text-white' : 'text-zinc-500'
+                    }`}
+                  >
+                    {feature.available ? (
+                      <CheckCircle2 className="w-4 h-4 text-purple-400" />
+                    ) : (
+                      <span className="w-4 h-4 inline-block" />
+                    )}
+                    <span>{feature.label}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );
-}
+};
+
