@@ -1038,4 +1038,4 @@ export const Pricing = () => {
       </div>
     </section>
   );
-};  isme jo feature available na ho unko strike out mat karo and bas unko aise chodhdo bas name ke aage tick na ho unme
+};  
